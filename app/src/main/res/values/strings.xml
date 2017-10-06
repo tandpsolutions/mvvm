@@ -1,0 +1,55 @@
+<resources>
+    <string name="app_name">BillingApp</string>
+    <string name="master">Master</string>
+    <string name="product_master">Product Master</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="this_is_home_fragment">this is home fragment</string>
+    <string name="add_product">Add Product</string>
+    <string name="product_name">Product Name</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="enter_product_name">Enter Product Name</string>
+    <string name="enter_valid_rate">Enter valid rate</string>
+    <string name="product_already_exist">Product already exist</string>
+    <string name="sucess">Success</string>
+    <string name="rate">Rate :</string>
+    <string name="create_bill">Create Bill</string>
+    <string name="bill_listing">Bill Listing</string>
+    <string name="bill_no">Bill No :</string>
+    <string name="customer">Customer :</string>
+    <string name="address">Address :</string>
+    <string name="bill_entry">Bill Entry</string>
+    <string name="qty">Qty :</string>
+    <string name="add">Add</string>
+    <string name="amount">Amount :</string>
+    <string name="delete">Delete</string>
+    <string name="enter_customer_name">Enter Customer Name</string>
+    <string name="enter_customer_address">Enter Customer Address</string>
+    <string name="invalid_amt">Invalid Amt</string>
+    <string name="tot_amt">Total Amount</string>
+    <string name="date_amp_time"><![CDATA[Date & Time]]></string>
+    <string name="edit">Edit</string>
+    <string name="please_add_product">Please add Product in bill</string>
+    <string name="save_bill_confirmation">Do you want to save this bill?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="ok">Ok</string>
+    <string name="edit_profile">Edit Profile</string>
+
+    <string name="choosePhoto">Choose from gallery</string>
+    <string name="capturePhoto">Capture photo</string>
+    <string name="common_cancel">Cancel</string>
+
+    <string name="selectPhoto">Select Photo</string>
+
+    <string name="msg_permission_access">You need to grant access to </string>
+    <string name="msg_notfind_intent">No app can perform this action.</string>
+
+    <string name="marshmellow_setting_permission_text">You need to grant permission from settings.</string>
+    <string name="marshmellow_permission_denied_text">You have denied the permission.</string>
+    <string name="msg_file_notexists">Image file is not exists. Select another image.</string>
+    <string name="upload">Upload</string>
+</resources>

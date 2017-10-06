@@ -1,0 +1,239 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.kcs.billingapp.fragments.AddBillFragment">
+
+    <data>
+
+        <variable
+            name="addBillViewModel"
+            type="com.kcs.billingapp.viewmodels.AddBillViewModel" />
+
+        <variable
+            name="billHeaderModel"
+            type="com.kcs.billingapp.models.BillHeaderModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/bill_no_title"
+                android:layout_width="@dimen/_90sdp"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:padding="@dimen/_10sdp"
+                android:text="@string/bill_no" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/bill_no_title"
+                android:padding="@dimen/_10sdp"
+                android:text="@{billHeaderModel.formatedBillNo}"
+                tools:text="1" />
+
+            <TextView
+                android:id="@+id/customer_title"
+                android:layout_width="@dimen/_90sdp"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/add_bill_et_customer"
+                android:layout_below="@+id/bill_no_title"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:gravity="center_vertical"
+                android:padding="@dimen/_10sdp"
+                android:text="@string/customer" />
+
+            <EditText
+                android:id="@+id/add_bill_et_customer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bill_no_title"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_toRightOf="@+id/bill_no_title"
+                android:inputType="text"
+                android:maxLength="50"
+                android:maxLines="1"
+                android:minLines="1"
+                android:padding="@dimen/_10sdp"
+                android:text="@={billHeaderModel.customer_name}"
+                tools:text="Bhaumik Shah" />
+
+
+            <TextView
+                android:id="@+id/address_title"
+                android:layout_width="@dimen/_90sdp"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/add_bill_et_address"
+                android:layout_below="@+id/customer_title"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:gravity="center_vertical"
+                android:padding="@dimen/_10sdp"
+                android:text="@string/address" />
+
+            <EditText
+                android:id="@+id/add_bill_et_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/customer_title"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_toRightOf="@+id/bill_no_title"
+                android:gravity="top"
+                android:lines="3"
+                android:maxLines="3"
+                android:minLines="3"
+                android:padding="@dimen/_10sdp"
+                android:text="@={billHeaderModel.address}"
+                tools:text="Bhaumik Shah" />
+
+
+            <TextView
+                android:id="@+id/gender_title"
+                android:layout_width="@dimen/_90sdp"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/add_bill_rg_gender"
+                android:layout_below="@+id/address_title"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:gravity="center_vertical"
+                android:padding="@dimen/_10sdp"
+                android:text="Gender" />
+
+            <RadioGroup
+                android:id="@+id/add_bill_rg_gender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/address_title"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_toRightOf="@+id/bill_no_title"
+                android:orientation="horizontal"
+                android:padding="@dimen/_10sdp">
+
+                <RadioButton
+                    android:id="@+id/rb_male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@={billHeaderModel.gender}"
+                    android:text="Male" />
+
+                <RadioButton
+                    android:id="@+id/rb_female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:checked="@{!billHeaderModel.gender}"
+                    android:text="Female" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/bill_tot_amt_title"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/add_bill_rg_gender"
+                android:gravity="center_vertical"
+                android:padding="@dimen/_10sdp"
+                android:text="@string/tot_amt" />
+
+            <TextView
+                android:id="@+id/bill_tot_amt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/add_bill_rg_gender"
+                android:layout_toRightOf="@+id/bill_tot_amt_title"
+                android:padding="@dimen/_10sdp"
+                android:text="@{billHeaderModel.formatedTotal}"
+                tools:text="1" />
+
+            <LinearLayout
+                android:id="@+id/bill_ll_spiner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bill_tot_amt_title"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="horizontal"
+                android:weightSum="10">
+
+                <Spinner
+                    android:id="@+id/productSpinner"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="6"
+                    app:adapter="@{addBillViewModel.getSpinerAdapter}" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:padding="@dimen/_10sdp"
+                    android:text="@string/rate" />
+
+                <EditText
+                    android:id="@+id/item_rate"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:inputType="numberDecimal"
+                    android:maxLines="1"
+                    android:minLines="1"
+                    android:padding="@dimen/_10sdp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/bill_qty_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bill_ll_spiner"
+                android:layout_weight="1"
+                android:padding="@dimen/_10sdp"
+                android:text="@string/qty" />
+
+            <EditText
+                android:id="@+id/bill_et_qty"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bill_ll_spiner"
+                android:layout_toRightOf="@+id/bill_qty_title"
+                android:inputType="number"
+                android:maxLines="1"
+                android:minLines="1"
+                android:padding="@dimen/_10sdp" />
+
+            <TextView
+                android:id="@+id/tot_amt_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bill_ll_spiner"
+                android:layout_toRightOf="@+id/bill_et_qty"
+                android:layout_weight="1"
+                android:padding="@dimen/_10sdp"
+                android:text="@string/amount" />
+
+            <TextView
+                android:id="@+id/tv_tot_amt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bill_ll_spiner"
+                android:layout_toRightOf="@+id/tot_amt_title"
+                android:inputType="number"
+                android:maxLines="1"
+                android:minLines="1"
+                android:padding="@dimen/_10sdp" />
+
+            <TextView
+                style="@style/positive_button_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_tot_amt"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:onClick="@{addBillViewModel.onAddClick()}"
+                android:text="@string/add" />
+        </RelativeLayout>
+    </ScrollView>
+</layout>

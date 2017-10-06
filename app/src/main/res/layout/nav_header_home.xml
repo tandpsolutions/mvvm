@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="headerViewModel"
+            type="com.kcs.billingapp.viewmodels.HeaderViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/_16sdp"
+        android:paddingLeft="@dimen/_16sdp"
+        android:paddingRight="@dimen/_16sdp"
+        android:paddingTop="@dimen/_16sdp">
+
+        <com.kcs.billingapp.kcsviews.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:onClick="@{headerViewModel.imageClick()}"
+            android:paddingTop="@dimen/_10sdp"
+            android:src="@android:drawable/sym_def_app_icon"
+            app:civ_border_color="@color/colorDivider"
+            app:civ_border_width="@dimen/_2sdp" />
+    </LinearLayout>
+</layout>

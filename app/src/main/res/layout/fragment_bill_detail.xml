@@ -1,0 +1,16 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.kcs.billingapp.fragments.BillDetailFragment">
+
+    <data>
+
+        <variable
+            name="billdetailmodel"
+            type="com.kcs.billingapp.viewmodels.BillDetailViewModel" />
+    </data>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_detail_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</layout>

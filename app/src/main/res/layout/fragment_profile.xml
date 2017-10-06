@@ -1,0 +1,40 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="profile"
+            type="com.kcs.billingapp.viewmodels.ProfileViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        tools:context="com.kcs.billingapp.fragments.ProfileFragment">
+
+
+        <com.kcs.billingapp.kcsviews.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="@dimen/_90sdp"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:onClick="@{profile.onImageClick()}"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher"
+            app:civ_border_color="@color/colorDivider"
+            app:civ_border_width="@dimen/_2sdp" />
+
+
+        <TextView
+            style="@style/positive_button_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:text="@string/upload"
+            android:onClick="@{profile.onUploadClick()}"/>
+    </LinearLayout>
+</layout>
